@@ -1,0 +1,12 @@
+Options -Indexes -MultiViews +FollowSymLinks
+RewriteEngine On
+RewriteBase /
+
+# Serve existing files/directories as-is (assets, favicon, etc.)
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Everything else falls back to the SPA shell so client-side routing
+# (react-router BrowserRouter) can handle deep links on direct load/refresh.
+RewriteRule ^ index.html [L]
