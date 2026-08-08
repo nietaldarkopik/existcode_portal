@@ -9,7 +9,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@existcode/types": "*",
+    "@existcode/types": "file:../types",
     "axios": "^1.19.0"
   },
   "peerDependencies": {

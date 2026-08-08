@@ -10,8 +10,8 @@
     "generate:theme": "tsx src/tokens/generate-theme.ts"
   },
   "dependencies": {
-    "@existcode/hooks": "*",
-    "@existcode/types": "*",
+    "@existcode/hooks": "file:../hooks",
+    "@existcode/types": "file:../types",
     "@radix-ui/react-dialog": "^1.1.23",
     "@radix-ui/react-select": "^2.3.7",
     "@radix-ui/react-slot": "^1.3.3",
@@ -27,7 +27,7 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@existcode/config": "*",
+    "@existcode/config": "file:../config",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
     "framer-motion": "^13.0.0",

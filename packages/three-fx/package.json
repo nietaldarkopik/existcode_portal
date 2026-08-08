@@ -9,7 +9,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@existcode/hooks": "*"
+    "@existcode/hooks": "file:../hooks"
   },
   "peerDependencies": {
     "@react-three/drei": "^10.7.8",
