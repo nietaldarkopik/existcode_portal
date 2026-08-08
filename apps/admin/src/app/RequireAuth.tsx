@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { Navigate, Outlet } from "react-router-dom";
-import { ensureCsrfCookie, getAdminMe } from "@existcode/api-client";
+import { getAdminMe } from "@existcode/api-client";
 import { apiClient } from "./apiClient";
+import { clearAuthToken, getAuthToken } from "./authToken";
 import { useAuthStore } from "./authStore";
 
 export function RequireAuth() {
@@ -16,9 +17,13 @@ export function RequireAuth() {
     let active = true;
     setStatus("loading");
 
-    ensureCsrfCookie(apiClient)
-      .catch(() => undefined)
-      .then(() => getAdminMe(apiClient))
+    if (!getAuthToken()) {
+      setUser(null);
+      setStatus("unauthenticated");
+      return;
+    }
+
+    getAdminMe(apiClient)
       .then((user) => {
         if (active) {
           setUser(user);
@@ -27,6 +32,7 @@ export function RequireAuth() {
       })
       .catch(() => {
         if (active) {
+          clearAuthToken();
           setUser(null);
           setStatus("unauthenticated");
         }

@@ -3,6 +3,7 @@ import { Briefcase, LayoutDashboard, LogOut, Mail, Newspaper, Palette, Search, S
 import { cn } from "@existcode/ui";
 import { adminLogout } from "@existcode/api-client";
 import { apiClient } from "../app/apiClient";
+import { clearAuthToken } from "../app/authToken";
 import { useAuthStore } from "../app/authStore";
 
 const navItems = [
@@ -23,6 +24,7 @@ export function Sidebar() {
 
   async function handleLogout() {
     await adminLogout(apiClient).catch(() => undefined);
+    clearAuthToken();
     setUser(null);
     setStatus("unauthenticated");
   }

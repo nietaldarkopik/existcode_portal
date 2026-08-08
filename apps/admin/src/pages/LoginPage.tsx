@@ -2,8 +2,9 @@ import { useState, type FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Alert, Input } from "@existcode/ui";
-import { adminLogin, ensureCsrfCookie } from "@existcode/api-client";
+import { adminLogin } from "@existcode/api-client";
 import { apiClient } from "../app/apiClient";
+import { setAuthToken } from "../app/authToken";
 import { useAuthStore } from "../app/authStore";
 
 export function LoginPage() {
@@ -22,8 +23,8 @@ export function LoginPage() {
     setError(null);
 
     try {
-      await ensureCsrfCookie(apiClient);
       const res = await adminLogin(apiClient, { email, password });
+      setAuthToken(res.token);
       setUser(res.data);
       setStatus("authenticated");
       navigate("/", { replace: true });

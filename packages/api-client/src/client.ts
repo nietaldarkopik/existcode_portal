@@ -20,10 +20,6 @@ export class ApiError extends Error {
 export function createApiClient({ baseURL }: CreateApiClientOptions): AxiosInstance {
   const client = axios.create({
     baseURL,
-    withCredentials: true,
-    withXSRFToken: true,
-    xsrfCookieName: "XSRF-TOKEN",
-    xsrfHeaderName: "X-XSRF-TOKEN",
     headers: {
       Accept: "application/json"
     }

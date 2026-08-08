@@ -1,6 +1,6 @@
-import { useEffect, type ReactNode } from "react";
+import { type ReactNode } from "react";
 import { QueryClientProvider, useQuery } from "@tanstack/react-query";
-import { ensureCsrfCookie, getThemeSetting } from "@existcode/api-client";
+import { getThemeSetting } from "@existcode/api-client";
 import { ThemeProvider } from "@existcode/ui";
 import { BrowserRouter } from "react-router-dom";
 import { apiClient } from "./apiClient";
@@ -19,10 +19,6 @@ function SiteThemeProvider({ children }: { children: ReactNode }) {
 }
 
 export function Providers({ children }: { children: ReactNode }) {
-  useEffect(() => {
-    ensureCsrfCookie(apiClient);
-  }, []);
-
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
