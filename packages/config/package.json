@@ -1,0 +1,23 @@
+{
+  "name": "@existcode/config",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./tsconfig.base.json": "./tsconfig.base.json",
+    "./tsconfig.react.json": "./tsconfig.react.json",
+    "./tailwind.css": "./tailwind.css",
+    "./theme-presets.css": "./theme-presets.css",
+    "./eslint-preset": "./eslint-preset.js"
+  },
+  "dependencies": {
+    "@eslint/js": "^9.39.5",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.3",
+    "typescript-eslint": "^8.66.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.5"
+  }
+}

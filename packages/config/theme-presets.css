@@ -1,0 +1,96 @@
+/* Runtime-swappable theme/accent overrides for the site theme switcher.
+   Re-declares the SAME --color-neutral-* and --color-accent-* variables
+   that packages/config/tailwind.css declares in :root, scoped to
+   [data-theme]/[data-accent] attributes set on <html> by ThemeProvider.
+   Because every
+   generated Tailwind utility (bg-neutral-950, text-accent-300, ...) reads
+   these variables via var(...) rather than inlining their value, swapping
+   them here re-skins the whole app without touching component markup.
+
+   "dark-slate" (theme) and "teal" (accent) are the existing :root defaults,
+   so they have no override block below — only the other variants remap
+   values. Keep swatch hexes here in sync with packages/ui/src/theme/presets.ts. */
+
+[data-theme="light-alpine"] {
+  --color-neutral-50: #10141c;
+  --color-neutral-100: #1f2530;
+  --color-neutral-200: #333d4d;
+  --color-neutral-300: #4b5563;
+  --color-neutral-400: #6b7686;
+  --color-neutral-500: #9aa5b3;
+  --color-neutral-600: #c7cfd9;
+  --color-neutral-700: #dde3ea;
+  --color-neutral-800: #eef1f5;
+  --color-neutral-900: #ffffff;
+  --color-neutral-950: #f7f8fa;
+}
+
+[data-theme="sapphire-navy"] {
+  --color-neutral-50: #eef4ff;
+  --color-neutral-100: #dde8fa;
+  --color-neutral-200: #c2d4f2;
+  --color-neutral-300: #93aee0;
+  --color-neutral-400: #5b7cc4;
+  --color-neutral-500: #2c4a8f;
+  --color-neutral-600: #1c3164;
+  --color-neutral-700: #142449;
+  --color-neutral-800: #0d1830;
+  --color-neutral-900: #081026;
+  --color-neutral-950: #050a1a;
+}
+
+[data-theme="steel-gray"] {
+  --color-neutral-50: #f2f4f7;
+  --color-neutral-100: #e2e5ea;
+  --color-neutral-200: #c3c9d4;
+  --color-neutral-300: #98a2b3;
+  --color-neutral-400: #6b7688;
+  --color-neutral-500: #4a5568;
+  --color-neutral-600: #313a4d;
+  --color-neutral-700: #232a38;
+  --color-neutral-800: #1a202c;
+  --color-neutral-900: #12161f;
+  --color-neutral-950: #0c0e13;
+}
+
+[data-accent="blue"] {
+  --color-accent-300: #93c5fd;
+  --color-accent-400: #60a5fa;
+  --color-accent-500: #3b82f6;
+  --color-accent-600: #2563eb;
+}
+
+[data-accent="emerald"] {
+  --color-accent-300: #6ee7b7;
+  --color-accent-400: #34d399;
+  --color-accent-500: #10b981;
+  --color-accent-600: #059669;
+}
+
+[data-accent="amber"] {
+  --color-accent-300: #fcd34d;
+  --color-accent-400: #fbbf24;
+  --color-accent-500: #f59e0b;
+  --color-accent-600: #d97706;
+}
+
+[data-accent="violet"] {
+  --color-accent-300: #c4b5fd;
+  --color-accent-400: #a78bfa;
+  --color-accent-500: #8b5cf6;
+  --color-accent-600: #7c3aed;
+}
+
+[data-accent="crimson"] {
+  --color-accent-300: #fda4af;
+  --color-accent-400: #fb7185;
+  --color-accent-500: #f43f5e;
+  --color-accent-600: #e11d48;
+}
+
+[data-accent="cyan"] {
+  --color-accent-300: #67e8f9;
+  --color-accent-400: #22d3ee;
+  --color-accent-500: #06b6d4;
+  --color-accent-600: #0891b2;
+}

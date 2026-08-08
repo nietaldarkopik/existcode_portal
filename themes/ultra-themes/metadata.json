@@ -1,0 +1,8 @@
+{
+  "name": "Formal Ultra",
+  "description": "Hyper-realistic futuristic UI/UX showcase featuring 3D particle engines, multi-dimensional service matrix, orbital blog sphere, kinetic news stream, and dynamic feature reactor.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

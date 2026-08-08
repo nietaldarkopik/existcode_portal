@@ -1,0 +1,83 @@
+/* GENERATED FILE — do not edit directly.
+   Source of truth: packages/ui/src/tokens/tokens.ts
+   Regenerate with: npm run generate:theme -w @existcode/ui */
+@import "tailwindcss";
+
+/* Tailwind's auto content-detection only walks from the consuming app's
+   Vite root, so sibling monorepo packages need to be added explicitly. */
+@source "../ui/src";
+
+@theme {
+  --color-neutral-50: #f4f6f9;
+  --color-neutral-100: #e2e7ee;
+  --color-neutral-200: #b9c2d0;
+  --color-neutral-300: #8b96a8;
+  --color-neutral-400: #5e6a7e;
+  --color-neutral-500: #3f4a5c;
+  --color-neutral-600: #2a3342;
+  --color-neutral-700: #1c2330;
+  --color-neutral-800: #131924;
+  --color-neutral-900: #0d121a;
+  --color-neutral-950: #080b11;
+  --color-accent-300: #5eead4;
+  --color-accent-400: #2dd4bf;
+  --color-accent-500: #14b8a6;
+  --color-accent-600: #0d9488;
+  --color-violet-400: #a78bfa;
+  --color-violet-500: #8b5cf6;
+  --color-success-400: #34d399;
+  --color-success-500: #10b981;
+  --color-warning-400: #fbbf24;
+  --color-warning-500: #f59e0b;
+  --color-danger-400: #fb7185;
+  --color-danger-500: #f43f5e;
+  --color-info-400: #38bdf8;
+  --color-info-500: #0ea5e9;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1rem;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.25rem;
+  --text-base: 1rem;
+  --text-base--line-height: 1.5rem;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.75rem;
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 1.75rem;
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: 2rem;
+  --text-3xl: 1.875rem;
+  --text-3xl--line-height: 2.25rem;
+  --text-4xl: 2.25rem;
+  --text-4xl--line-height: 2.5rem;
+  --text-5xl: 3rem;
+  --text-5xl--line-height: 1.1;
+  --text-6xl: 3.75rem;
+  --text-6xl--line-height: 1.05;
+  --text-display: 4.5rem;
+  --text-display--line-height: 1;
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+  --radius-xl: 6px;
+  --radius-full: 9999px;
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-hud: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root {
+  --duration-instant: 100ms;
+  --duration-fast: 150ms;
+  --duration-base: 200ms;
+  --duration-slow: 500ms;
+  --duration-cinematic: 800ms;
+  --z-dropdown: 1000;
+  --z-sticky: 1100;
+  --z-overlay: 1200;
+  --z-modal: 1300;
+  --z-popover: 1400;
+  --z-toast: 1500;
+  --z-tooltip: 1600;
+}

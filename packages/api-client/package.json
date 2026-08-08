@@ -1,0 +1,24 @@
+{
+  "name": "@existcode/api-client",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@existcode/types": "*",
+    "axios": "^1.19.0"
+  },
+  "peerDependencies": {
+    "@tanstack/react-query": "^5.101.4",
+    "react": "^19.0.0"
+  },
+  "devDependencies": {
+    "@tanstack/react-query": "^5.101.4",
+    "@types/react": "^19.2.18",
+    "typescript": "^5.9.3"
+  }
+}
