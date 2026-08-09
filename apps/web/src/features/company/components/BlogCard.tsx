@@ -20,7 +20,11 @@ export function BlogCard({ post }: { post: BlogPost }) {
         to={path("blogDetail", { slug: post.slug })}
         className="flex h-full flex-col overflow-hidden bg-neutral-900 shadow-lg shadow-black/0 hover:shadow-black/40"
       >
-        <div className={`h-32 ${accentTone(post.accent)}`} />
+        {post.cover_image_url ? (
+          <img src={post.cover_image_url} alt="" className="h-32 w-full object-cover" />
+        ) : (
+          <div className={`h-32 ${accentTone(post.accent)}`} />
+        )}
         <div className="flex flex-1 flex-col gap-2 p-5">
           {post.category ? (
             <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-neutral-500">
