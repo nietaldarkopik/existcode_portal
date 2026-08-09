@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\V1\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Api\V1\Admin\BlogCategoryController as AdminBlogCategoryController;
 use App\Http\Controllers\Api\V1\Admin\BlogPostController as AdminBlogPostController;
 use App\Http\Controllers\Api\V1\Admin\ContactMessageController as AdminContactMessageController;
+use App\Http\Controllers\Api\V1\Admin\ImageUploadController as AdminImageUploadController;
 use App\Http\Controllers\Api\V1\Admin\NewsPostController as AdminNewsPostController;
 use App\Http\Controllers\Api\V1\Admin\OrderController as AdminOrderController;
 use App\Http\Controllers\Api\V1\Admin\PricingPlanController as AdminPricingPlanController;
@@ -44,6 +45,8 @@ Route::prefix('v1')->group(function () {
 
         Route::get('/settings/seo', [AdminSeoSettingController::class, 'show']);
         Route::put('/settings/seo', [AdminSeoSettingController::class, 'update']);
+
+        Route::post('/uploads/image', [AdminImageUploadController::class, 'store']);
     });
 
     // Public, read-only company-profile content. Slug columns are locale-JSON

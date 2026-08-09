@@ -1,6 +1,7 @@
 import { Input, Textarea } from "@existcode/ui";
 import type { AdminSeoPayload } from "@existcode/types";
 import { Field } from "./Field";
+import { ImageUploadField } from "./ImageUploadField";
 import type { AdminLocale } from "./LocaleTabBar";
 
 export function SeoFieldsSection({
@@ -40,13 +41,12 @@ export function SeoFieldsSection({
           placeholder="jasa pembuatan website, laravel, react"
         />
       </Field>
-      <Field label="URL Gambar Preview (og:image)" hint="Muncul saat link dibagikan di WhatsApp/Facebook/X/Instagram.">
-        <Input
-          value={value.og_image ?? ""}
-          onChange={(e) => onChange({ ...value, og_image: e.target.value })}
-          placeholder="https://..."
-        />
-      </Field>
+      <ImageUploadField
+        label="Gambar Preview (og:image)"
+        hint="Muncul saat link dibagikan di WhatsApp/Facebook/X/Instagram."
+        value={value.og_image ?? ""}
+        onChange={(url) => onChange({ ...value, og_image: url })}
+      />
     </div>
   );
 }

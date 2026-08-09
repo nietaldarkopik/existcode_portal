@@ -7,6 +7,7 @@ export * from "./endpoints/orders";
 export * from "./endpoints/invoices";
 export * from "./endpoints/contactMessages";
 export * from "./endpoints/adminAuth";
+export * from "./endpoints/adminUploads";
 export * from "./endpoints/adminServices";
 export * from "./endpoints/adminPricingPlans";
 export * from "./endpoints/adminBlog";

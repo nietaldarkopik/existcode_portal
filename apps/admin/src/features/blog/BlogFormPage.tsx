@@ -12,6 +12,7 @@ import {
 import type { AdminBlogPostPayload, ServiceAccent } from "@existcode/types";
 import { apiClient } from "../../app/apiClient";
 import { Field } from "../../components/Field";
+import { ImageUploadField } from "../../components/ImageUploadField";
 import { LocaleTabBar, type AdminLocale } from "../../components/LocaleTabBar";
 import { SeoFieldsSection } from "../../components/SeoFieldsSection";
 
@@ -153,13 +154,11 @@ export function BlogFormPage() {
             options={categoryOptions}
           />
         </Field>
-        <Field label="URL Gambar Sampul (opsional)">
-          <Input
-            value={form.cover_image_url}
-            onChange={(e) => setForm({ ...form, cover_image_url: e.target.value })}
-            placeholder="https://..."
-          />
-        </Field>
+        <ImageUploadField
+          label="Gambar Sampul (opsional)"
+          value={form.cover_image_url ?? ""}
+          onChange={(url) => setForm({ ...form, cover_image_url: url })}
+        />
         <Field label="Warna Aksen (dipakai jika tanpa gambar sampul)">
           <Select
             value={form.accent ?? ""}
