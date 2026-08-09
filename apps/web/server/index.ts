@@ -91,7 +91,7 @@ async function resolveSeo(key: RouteKey, locale: Locale, params: Record<string, 
   const siteSeo = settingRes?.data;
   const titleTemplate: string = siteSeo?.titleTemplate ?? "%s — Existcode";
   const defaultKeywords: string | null = siteSeo?.defaultKeywords ?? null;
-  const defaultImage: string | null = siteSeo?.defaultOgImage ?? `${SITE_URL}/og-default.png`;
+  const defaultImage: string | null = siteSeo?.defaultOgImage ?? `${SITE_URL}/og-default.jpg`;
   const applyTemplate = (title: string) => titleTemplate.replace("%s", title);
 
   const detailEndpoint = DETAIL_ENDPOINTS[key];

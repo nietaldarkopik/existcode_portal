@@ -129,7 +129,7 @@ function resolve_seo(string $key, string $locale, ?string $slug): ?array
     $siteSeo = $settingRes['data'] ?? null;
     $titleTemplate = $siteSeo['titleTemplate'] ?? '%s — Existcode';
     $defaultKeywords = $siteSeo['defaultKeywords'] ?? null;
-    $defaultImage = $siteSeo['defaultOgImage'] ?? (SITE_URL . '/og-default.png');
+    $defaultImage = $siteSeo['defaultOgImage'] ?? (SITE_URL . '/og-default.jpg');
     $applyTemplate = fn (string $title): string => str_replace('%s', $title, $titleTemplate);
     $ogLocale = $locale === 'id' ? 'id_ID' : 'en_US';
 
