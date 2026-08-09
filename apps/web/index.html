@@ -1,10 +1,46 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Existcode</title>
+
+    <!--
+      Sitewide fallback tags — shown as-is to anything that doesn't get
+      per-page injection. Real browsers get these overwritten per-page by
+      <Seo> (React 19 hoists <title>/<meta> and reuses these existing tags
+      instead of duplicating them). Link-preview bots (WhatsApp, Facebook,
+      X, etc.) don't run JS, so they're routed by .htaccess to preview.php
+      instead, which replaces everything between the seo:start/seo:end
+      markers below with tags resolved from the actual page's data (see
+      preview.php and, for Node deployments, server/index.ts — keep the
+      three in sync).
+    -->
+    <!-- seo:start -->
+    <title>Existcode — Jasa Pengembangan Software & Cloud/DevOps</title>
+    <meta
+      name="description"
+      content="Existcode membangun website, aplikasi, dan infrastruktur cloud/DevOps untuk bisnis Anda."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Existcode" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:title" content="Existcode — Jasa Pengembangan Software & Cloud/DevOps" />
+    <meta
+      property="og:description"
+      content="Existcode membangun website, aplikasi, dan infrastruktur cloud/DevOps untuk bisnis Anda."
+    />
+    <meta property="og:url" content="%VITE_SITE_URL%/" />
+    <meta property="og:image" content="%VITE_SITE_URL%/og-default.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Existcode — Jasa Pengembangan Software & Cloud/DevOps" />
+    <meta
+      name="twitter:description"
+      content="Existcode membangun website, aplikasi, dan infrastruktur cloud/DevOps untuk bisnis Anda."
+    />
+    <meta name="twitter:image" content="%VITE_SITE_URL%/og-default.png" />
+    <!-- seo:end -->
   </head>
   <body>
     <div id="root"></div>

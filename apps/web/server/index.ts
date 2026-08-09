@@ -91,7 +91,7 @@ async function resolveSeo(key: RouteKey, locale: Locale, params: Record<string, 
   const siteSeo = settingRes?.data;
   const titleTemplate: string = siteSeo?.titleTemplate ?? "%s — Existcode";
   const defaultKeywords: string | null = siteSeo?.defaultKeywords ?? null;
-  const defaultImage: string | null = siteSeo?.defaultOgImage ?? null;
+  const defaultImage: string | null = siteSeo?.defaultOgImage ?? `${SITE_URL}/og-default.png`;
   const applyTemplate = (title: string) => titleTemplate.replace("%s", title);
 
   const detailEndpoint = DETAIL_ENDPOINTS[key];
@@ -144,6 +144,7 @@ function renderHead(seo: ResolvedSeo, url: string, locale: Locale): string {
     seo.keywords ? `<meta name="keywords" content="${escapeHtml(seo.keywords)}" />` : "",
     `<link rel="canonical" href="${escapeHtml(url)}" />`,
     `<meta property="og:type" content="${seo.type}" />`,
+    `<meta property="og:site_name" content="Existcode" />`,
     `<meta property="og:locale" content="${ogLocale}" />`,
     `<meta property="og:title" content="${escapeHtml(seo.title)}" />`,
     `<meta property="og:description" content="${escapeHtml(seo.description)}" />`,
@@ -159,7 +160,7 @@ function renderHead(seo: ResolvedSeo, url: string, locale: Locale): string {
 }
 
 function injectHead(html: string, headExtra: string): string {
-  return html.replace(/<title>.*?<\/title>/, headExtra);
+  return html.replace(/<!-- seo:start -->[\s\S]*?<!-- seo:end -->/, `<!-- seo:start -->\n    ${headExtra}\n    <!-- seo:end -->`);
 }
 
 const app = express();

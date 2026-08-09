@@ -2,11 +2,20 @@ Options -Indexes -MultiViews +FollowSymLinks
 RewriteEngine On
 RewriteBase /
 
-# Serve existing files/directories as-is (assets, favicon, etc.)
+# Block direct access to the SEO preview cache (preview.php's internal use).
+RewriteRule ^\.seo-cache/ - [F,L]
+
+# Serve existing files/directories as-is (assets, favicon, preview.php, etc.)
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# Everything else falls back to the SPA shell so client-side routing
+# Known link-preview bots get server-rendered meta tags for the exact page
+# requested (see preview.php) since they don't run JS and never reach the
+# client-side <Seo> component.
+RewriteCond %{HTTP_USER_AGENT} (facebookexternalhit|Facebot|WhatsApp|Twitterbot|LinkedInBot|Slackbot|TelegramBot|Discordbot|Googlebot|Google-InspectionTool|bingbot|Applebot|Pinterest|redditbot) [NC]
+RewriteRule ^ preview.php [L]
+
+# Everyone else falls back to the SPA shell so client-side routing
 # (react-router BrowserRouter) can handle deep links on direct load/refresh.
 RewriteRule ^ index.html [L]
