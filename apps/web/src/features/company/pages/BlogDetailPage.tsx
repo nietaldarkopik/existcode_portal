@@ -45,7 +45,11 @@ export function BlogDetailPage() {
         type="article"
       />
       <Breadcrumb trail={[t.nav.blog.toUpperCase()]} className="mb-3" />
-      <div className={`h-56 ${accentTone(post.accent)}`} />
+      {post.cover_image_url ? (
+        <img src={post.cover_image_url} alt={post.title} className="h-56 w-full object-cover" />
+      ) : (
+        <div className={`h-56 ${accentTone(post.accent)}`} />
+      )}
 
       <div className="mx-auto mt-8 max-w-2xl">
         {post.category ? (
